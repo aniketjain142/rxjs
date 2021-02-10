@@ -1,0 +1,20 @@
+<h2>Pluck</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <p class="bg-light py-2 px-3 border rounded"><strong>Ex - 01 -> Pluck by property</strong></p>
+        <hr>
+       <ul >
+           <li *ngFor="let name of names">{{name}}</li>
+       </ul>
+    </div>
+
+    <div class="col-md-6">
+        <p class="bg-light py-2 px-3 border rounded"><strong>Ex - 02 -> pluck by nested property</strong></p>
+        <hr>
+        <ul >
+            <li *ngFor="let nested of nestedData">{{nested}}</li>
+        </ul>
+    </div>
+    
+</div>

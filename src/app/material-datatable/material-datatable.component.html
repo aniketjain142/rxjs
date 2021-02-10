@@ -1,0 +1,44 @@
+<h1>Data Table</h1>
+<hr>
+<br>
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade" *ngIf="isLoadingResult || isRateLimitReached">
+        <ng-http-loader></ng-http-loader>
+        <div  *ngIf="isRateLimitReached" class="example-rate-limit-reached">
+            GitHub Api rate limit has been reached
+        </div>
+    </div>
+
+    <div class="example-table-container">
+        <table mat-table [dataSource]="data" class="example-table table-bordered table"
+        matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef scope="col"> Sr. no</th>
+                <td mat-cell *matCellDef="let row">{{row.number}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="title">
+                <th mat-header-cell *matHeaderCellDef>title</th>
+                <td mat-cell *matCellDef="let row">{{row.title}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="state">
+                <th mat-header-cell *matHeaderCellDef>State</th>
+                <td mat-cell *matCellDef="let row">{{row.state}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="created" >
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header >Created</th>
+                <td mat-cell *matCellDef="let row">{{row.created_at | date}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+             <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+        </table>
+    </div>
+    <mat-paginator [length]="resultLength" [pageSize]="30"></mat-paginator>
+</div>
+<br>
+<hr>
+<br>

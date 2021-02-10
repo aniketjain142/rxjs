@@ -1,0 +1,33 @@
+
+<h2>Debounce Time & Distint Until Changed</h2>
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <strong>Ex-01 <span class="text-primary">Debounce Time</span></strong>
+       <hr>
+        <div class="form-group row">
+           <label  class="col-sm-2 col-form-label col-form-label-lg">
+               Search..
+           </label>
+           <div class="col-sm-10">
+               <input type="email" placeholder="Search"
+             #myInput   class="form-control form-control-lg">
+           </div>
+           <span *ngIf="reData">Reuested Data: <strong class="text-success">{{reData}}</strong></span>
+       </div> 
+    </div>
+    <div class="col-md-6">
+        <strong>Ex-02 <span class="text-primary">Distint Until Changed</span></strong>
+       <hr>
+        <div class="form-group row">
+           <label  class="col-sm-2 col-form-label col-form-label-lg">
+               Search..
+           </label>
+           <div class="col-sm-10">
+               <input type="email" placeholder="Search"
+             #myInput1  class="form-control form-control-lg">
+           </div>
+           <span *ngIf="reData1">Reuested Data: <strong class="text-success">{{reData1}}</strong></span>
+       </div> 
+    </div>
+</div>

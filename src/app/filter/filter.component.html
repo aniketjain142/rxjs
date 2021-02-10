@@ -1,0 +1,54 @@
+<h2>Filter</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <p class="bg-light py-2 px-3 border rounded"><strong>Ex - 01 -> Filter by length</strong></p>
+        <hr>
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            <tr *ngFor="let dat of data">
+                <td >{{dat.id}}</td>
+                <td >{{dat.name}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-4">
+        <p class="bg-light py-2 px-3 border rounded"><strong>Ex - 02 ->  Filter by Gender</strong></p>
+        <hr>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Gender</th>
+            </tr>
+            <tr *ngFor="let gender of genderFilter">
+                <td >{{gender.id}}</td>
+                <td >{{gender.name}}</td>
+                <td >{{gender.gender}}</td>
+            </tr>
+        </table>
+       
+    </div>
+
+    <div class="col-md-4">
+        <p class="bg-light py-2 px-3 border rounded"><strong>Ex - 03 -> Filter by Nth Iteam</strong></p>
+        <hr>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Gender</th>
+            </tr>
+            <tr *ngFor="let nth of nthIteam">
+                <td >{{nth.id}}</td>
+                <td >{{nth.name}}</td>
+                <td >{{nth.gender}}</td>
+            </tr>
+        </table>
+    </div>
+    
+</div>

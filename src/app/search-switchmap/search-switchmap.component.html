@@ -1,0 +1,46 @@
+<h2>Switch Map</h2>
+<hr>
+<h3>Search </h3>
+<div class="row">
+    <div class="col">
+        <form #search="ngForm">
+            <input type="text" required 
+            class="form-control form-control-lg" 
+            placeholder="Search Here" ngModel name="searchTerm" 
+            autocomplete="off">
+        </form>
+    </div>
+</div>
+
+<hr>
+<br>
+<div class="row" *ngIf="searchResults">
+    <div class="col-md-8">
+        <h5>Search Result</h5>
+    </div>
+    <div class="col-md-4">
+        <span class="  text-muted">{{searchResultCount}} Result Found...</span>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Thumbnail</th>
+        <th scope="col">Tiltle & Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let searchResult of searchResults;index as i">
+        <th scope="row">{{i+1}}</th>
+        <td><img [src]="searchResult.thumb" width="120"></td>
+        <td>
+            <strong>{{searchResult.title}}</strong>
+            <p>{{searchResult.description}}</p>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
